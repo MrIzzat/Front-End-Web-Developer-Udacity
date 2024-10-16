@@ -1,0 +1,1 @@
+Link the stylesheet `exercise-1.css` to `exercise-1.html`.

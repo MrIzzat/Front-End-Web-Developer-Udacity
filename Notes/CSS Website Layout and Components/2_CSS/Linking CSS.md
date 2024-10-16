@@ -70,7 +70,7 @@ An example:
 Another example:
 
 ```
-<link href="./style.css" type="text/css" rel="stylehseet />
+<link href="./style.css" type="text/css" rel="stylesheet" />
 ```
 
 The reference can be a URL to the style sheet or a path (relative or otherwise).
