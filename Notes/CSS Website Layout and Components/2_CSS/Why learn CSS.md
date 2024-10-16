@@ -7,4 +7,4 @@ Wireframes tend to be low fidelity, because they tend to be in monochrome with p
 
 Mockups tend to be between medium to high fidelity that use real images, colors and text
 
-Prototypes tend ot be high fidelity that use branding, images, text and sometimes interactivity (buttons and clicking).
+Prototypes tend to be high fidelity that use branding, images, text and sometimes interactivity (buttons and clicking).
