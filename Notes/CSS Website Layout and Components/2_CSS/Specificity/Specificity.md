@@ -7,4 +7,4 @@ Because HTML elements can be selected by more than one selector at once, there i
 
 The `!important` keyword can be added to an individual CSS property rule to override the previously mentioned precedence. But, it should be avoided. (Except for the style attribute I believe)
 
-![](./Specificity/css-specificity1.png)
+![](css-specificity1.png)
