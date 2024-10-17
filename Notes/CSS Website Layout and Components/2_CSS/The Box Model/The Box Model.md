@@ -44,3 +44,12 @@ Borders are very useful for debugging as if an element is not being rendered pro
 # Margin
 
 Margins represent the space surrounding the border. It's the space that's between the current element's box and other elements' boxes.
+
+
+Every box on a webpage can be seen by adding this CSS rule:
+
+```
+* {
+  border: 1px solid red !important;
+}
+```
