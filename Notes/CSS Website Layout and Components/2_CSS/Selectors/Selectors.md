@@ -75,7 +75,7 @@ Some examples are:
 
 * `[attr]` the selector will select any element that contains an attribute with the name of `attr`, regardless of the value.
 * `[attr=val]` the selector will select any element that contains an attribute with the name of `attr` and the value of `val`.
-* `[attr~=val]` the selector will select any element that contains an attribute with the name of `attr` and if its value contains `val` seperated by white spaces (sort of like a word in a sentence).
+* `[attr~=val]` the selector will select any element that contains an attribute with the name of `attr` and if its value contains `val` seperated by white spaces (sort of like a word in a sentence). *After some testing, I think css does this by default*
 
 An example:
 
