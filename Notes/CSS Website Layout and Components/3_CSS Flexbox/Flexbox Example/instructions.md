@@ -1,0 +1,3 @@
+# Instructions
+
+In `index.html`, set the display property to use `flex` within the `container` class. You should notice something about the boxes change...
