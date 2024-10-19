@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <!-- Change the order of elements so that box 3 appears first, then box2, then box 1 -->
+
+  <style>
+  .container{
+    display:flex;
+    flex-direction: row-reverse;
+    /* justify-content: left; */
+    border: 2px solid yellow;
+  }
+  .box{
+        width: 250px;
+        height: 150px;
+        border: 1px solid red;
+    }
+  </style>
+  </head>
+
+  <body>
+    <!-- Change the order of elements so that box 3 appears first, then box2, then box 1 -->
+
+  <div class = "container">
+    <!-- Second way is for each div to be given a style attribute with the order property  -->
+     <!-- Third way is for give each div an id and given a order property in the style tag -->
+      <!-- Fourth way is to order the div manually by rearrange the HTML code -->
+    <div class="box" > Box 1</div> 
+    <div class="box" > Box 2</div>
+    <div class="box"> Box 3</div>
+  </div>
+  </body>
+</html>
