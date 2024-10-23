@@ -1,0 +1,96 @@
+@media(min-width:800px) and (max-width: 1100px){
+    a[id*="main content"]{
+        font-size: 30px !important;
+    }
+}
+
+@media(max-width:800px){
+    a[id*="main content"]{
+        font-size: 25px !important;
+    }
+}
+
+a[id="main content first"]{
+    background: url(../assets/images/Candy.jpg);
+    background-size: 100%;
+    border-radius: 10%;
+ 
+    display: flex;
+    justify-content: center;
+ 
+    text-decoration: none;
+ 
+    font-size: 43px;
+    color: rgb(255, 231, 231);
+
+    
+ }
+ 
+ a[id="main content second"]{
+     background: url(../assets/images/Dice.jpg);
+     background-size: 100%;
+     border-radius: 10%;
+ 
+ 
+     display: flex;
+     justify-content: center;
+  
+     text-decoration: none;
+  
+     font-size: 50px;
+     color: rgb(93, 255, 223);
+
+ 
+ }
+ a[id="main content third"]{
+     background: url(../assets/images/Medicine.jpg);
+     background-size: 150%;
+     border-radius: 10%;
+ 
+     display: flex;
+     justify-content: center;
+  
+     text-decoration: none;
+  
+     font-size: 45px;
+     color: rgb(236, 0, 0);
+ }
+ a[id="main content fourth"]{
+     background: url(../assets/images/Rocks.jpg);
+     background-size: 100%;
+     border-radius: 10%;
+ 
+     display: flex;
+     justify-content: center;
+  
+     text-decoration: none;
+  
+     font-size: 50px;
+     color: rgb(233, 229, 221);
+ }
+ a[id="main content fifth"]{
+     background: url(../assets/images/Scrabble.jpg);
+     background-size: 130%;
+     border-radius: 10%;
+ 
+     display: flex;
+     justify-content: center;
+  
+     text-decoration: none;
+  
+     font-size: 50px;
+     color: rgb(19, 0, 90);
+ }
+ a[id="main content sixth"]{
+     background: url(../assets/images/US\ Dollar.jpg);
+     background-size: 100%;
+     border-radius: 10%;
+     
+     display: flex;
+     justify-content: center;
+  
+     text-decoration: none;
+  
+     font-size: 50px;
+     color: rgb(224, 241, 225);
+ }
