@@ -1,3 +1,7 @@
+body {
+    background-color: antiquewhite;
+}
+
 .border {
     border: 2px solid blue;
 }
@@ -14,42 +18,78 @@ footer {
     grid-area: ft;
 }
 
+.blogBox:hover {
+    box-shadow: 0px 5px 20px 15px rgb(88, 88, 88);
+}
 
+a:active {
+    color: black;
+}
+a:visited {
+    color: black;
+}
 
-section[id="main content first"]{
+a[id="main content first"]{
    background: url(./images/Candy.jpg);
    background-size: 100%;
    border-radius: 10%;
 
    display: flex;
    justify-content: center;
+
+   text-decoration: none;
 }
 
-section[id="main content second"]{
+a[id="main content second"]{
     background: url(./images/Dice.jpg);
     background-size: 100%;
     border-radius: 10%;
 
+    display: flex;
+    justify-content: center;
+ 
+    text-decoration: none;
+
 }
-section[id="main content third"]{
+a[id="main content third"]{
     background: url(./images/Medicine.jpg);
     background-size: 150%;
     border-radius: 10%;
+
+    display: flex;
+    justify-content: center;
+ 
+    text-decoration: none;
 }
-section[id="main content fourth"]{
+a[id="main content fourth"]{
     background: url(./images/Rocks.jpg);
     background-size: 100%;
     border-radius: 10%;
+
+    display: flex;
+    justify-content: center;
+ 
+    text-decoration: none;
 }
-section[id="main content fifth"]{
+a[id="main content fifth"]{
     background: url(./images/Scrabble.jpg);
     background-size: 130%;
     border-radius: 10%;
+    
+    display: flex;
+    justify-content: center;
+ 
+    text-decoration: none;
 }
-section[id="main content sixth"]{
+a[id="main content sixth"]{
     background: url(./images/US\ Dollar.jpg);
     background-size: 100%;
     border-radius: 10%;
+    
+    display: flex;
+    justify-content: center;
+ 
+    text-decoration: none;
 }
 
 @media(min-width: 1100px){
