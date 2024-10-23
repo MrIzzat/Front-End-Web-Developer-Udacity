@@ -2,8 +2,13 @@
 
 
 @media(min-width: 1100px){
+
+    header{
+        justify-content: space-evenly;
+    }
+
     div[id="grid container"] {
-        border: 2px solid yellow;
+        /* border: 2px solid yellow; */
         display:grid;
     
         grid-gap: 20px;
