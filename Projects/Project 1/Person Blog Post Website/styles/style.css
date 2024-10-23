@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+div[id="grid container"] {
+    min-height: 99vh;
+}
+
 .border {
     border: 1px solid rgb(0, 0, 0);
 }
