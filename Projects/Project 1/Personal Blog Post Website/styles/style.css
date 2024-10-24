@@ -35,6 +35,8 @@ footer {
     grid-area: ft;
 
     background-color: rgb(255, 250, 240);
+
+    font-size: 18px;
 }
 
 .blogBox:hover {
