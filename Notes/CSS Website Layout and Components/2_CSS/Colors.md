@@ -15,7 +15,7 @@ A hexadecimal color is specified as follows `#RRGGBB`. Where `RR` is red, `GG` i
 
 An Examples:
 
-```
+```css
 #p1 {
     background-color: #ff0000;
 }
@@ -42,7 +42,7 @@ Each parameter is a numeric value from 0-255 or a percentage from 0-100%. The la
 
 An example:
 
-```
+```css
 #p1 {
     background-color: rgb(255,0,0);
 }

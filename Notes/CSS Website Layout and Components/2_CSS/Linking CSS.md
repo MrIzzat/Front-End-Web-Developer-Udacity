@@ -3,20 +3,21 @@
 It's possible to write CSS code directly within HTML. This can be done by adding a style attribute `style` and specifying what that style is. 
 
 For example:
-
-`<p style="color: red;">I'm leanring to code!</p>`
+```html
+<p style="color: red;">I'm leanring to code!</p>
+```
 
 To add more than one style in an inline linking, the style can be added directly after the semicolon `;`.
 
 For example:
-
-`<p style="color: red; font-size: 20px;">I'm learning to code!</p>`
-
+```html
+<p style="color: red; font-size: 20px;">I'm learning to code!</p>
+```
 \
 CSS rules can also be added in the style attribute.
 
 For example:
-```
+```html
 <p>
     Want to try crossing out an 
     <a href="nowhere.html" style="color: #990000; text-decoration: line-through;">obselete link</a>
@@ -32,7 +33,7 @@ Inline styles have a higher priority than any other styles given to an element. 
 
 Inline styling does not allow the selection and styling of multiple elements at once, they must be styled seperately and manually. `<style>` allows for the writing of CSS code within an HTML page, which means it allows for selectors as well. The CSS code is written within the style tags while the style tags are located within the head tag `<head>`.
 
-```
+```html
 <head>
     <style></style>
 </head>
@@ -40,7 +41,7 @@ Inline styling does not allow the selection and styling of multiple elements at 
 
 For example:
 
-```
+```html
 <head>
     <style>
         p {
@@ -63,13 +64,13 @@ CSS styles don't need to be contained in the same file as the HTML. Instead, it 
 
 An example:
 
-```
+```html
 <link href="https://udacity.com/style.css" type="text/css" rel="stylesheet" />
 ```
 
 Another example:
 
-```
+```html
 <link href="./style.css" type="text/css" rel="stylesheet" />
 ```
 
@@ -81,7 +82,8 @@ CSS files can be linked to each other by using the `@import` command. It's usefu
 
 An example:
 
-```
+```css
 @import "./layout";
 @import "./images";
 @import "./blog_cards";
+```

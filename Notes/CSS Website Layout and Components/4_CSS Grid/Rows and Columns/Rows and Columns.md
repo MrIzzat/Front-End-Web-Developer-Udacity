@@ -5,7 +5,7 @@ After setting the `display` property to `grid`, the rows and columns of the grid
 
 An example:
 
-```
+```css
 grid-template-columns: 60px 60px;
 ```
 
@@ -16,7 +16,7 @@ This creates two columns of 60px each. If there were two items and their sizes w
 
 An example:
 
-```
+```css
 grid-template-rows: 160px 60px;
 ```
 

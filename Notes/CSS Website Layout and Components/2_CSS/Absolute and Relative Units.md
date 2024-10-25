@@ -25,7 +25,7 @@ Examples of relativem measurements:
 
 A use case of `em`:
 
-```
+```css
 body{
     font-size: 16px;
 }

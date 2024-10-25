@@ -4,7 +4,7 @@ Instead of having to manually creating multiple columns of the same size, `repea
 
 An example:
 
-```
+```css
 grid-template-columns: repeat(6,1fr);
 ```
 

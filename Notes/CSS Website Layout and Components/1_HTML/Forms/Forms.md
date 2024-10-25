@@ -22,7 +22,7 @@ An `<input>` tag can be used to create an input. The type of input can be specif
 
 An example:
 
-```
+```html
 <form>
     <legend>Input Types</legend>
     <fieldset>
@@ -49,7 +49,7 @@ The `select` element can be used to create drop down menu.
 
 An example:
 
-```
+```html
 <form>
     <legend>The "Select" Input</legend>
     <fieldset>

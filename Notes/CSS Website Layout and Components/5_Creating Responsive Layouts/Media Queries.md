@@ -13,12 +13,12 @@ A **viewport** is a the area of the window that web content can be seen. Usually
 
 The syntax for a media query is:
 
-```
+```css
 @media(feature:value)
 ```
 An example usage:
 
-```
+```css
 @media(min-wdith: 900px){
     body{
         background: red;
@@ -33,7 +33,7 @@ In addtion to `min-`, `max-` can be used as well.
 
 Another example:
 
-```
+```css
 @media(min-width:1100px){
     body{
         font-size: 27px;
@@ -45,7 +45,7 @@ This means if the width of the screen is bigger than 1100px, set the font size o
 
 Multiple media queries can be used to handle more than one screen size:
 
-```
+```css
 .container{
     ....
 }

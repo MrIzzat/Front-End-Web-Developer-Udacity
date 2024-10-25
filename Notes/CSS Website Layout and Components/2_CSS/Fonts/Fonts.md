@@ -12,7 +12,7 @@ Emphasis usually refers to italics. It's best to use the `<em>` tag for italic.
 
 An example:
 
-```
+```html
 <p>
     We <em>have</em> to buy the latest version of the pet hari remover vacuum, the floor is covered with fur.
 </p>
@@ -23,11 +23,12 @@ An example:
 </p>
 
 
+\
 For important words, it's best to use the strong tag `<strong>`. By default, it's used to make words bold, but that is only the default browser behavior and can be overridden. The purpose of `<strong>` is not just to make text bold, but to make it important.
 
 An example:
 
-```
+```html
 <p>
     My dog is the most <strong>important</strong> creature in my life right now
 </p>
@@ -40,7 +41,7 @@ An example:
 
 There are lots of ways to host a font from an external source. A common used method is by using google fonts (can be found [here]("https://fonts.google.com/")). Once a font has been selected, a line of code will be provded to be added in the `head` section of the html, like this:
 
-```
+```html
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -48,7 +49,7 @@ There are lots of ways to host a font from an external source. A common used met
 
 The CSS property in an element can be done like this:
 
-```
+```css
 .box{
     font-family: 'Montserrat', sans-serif;
 }

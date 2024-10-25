@@ -2,7 +2,7 @@ An element can be selected by CSS to be styled using the element's selector. The
 
 For example:
 
-```
+```css
 p {
     color: red;
 }
@@ -20,12 +20,12 @@ If the styling should not be applied to every element with the same tag, classes
 For example:
 
 The HTML
-```
+```html
 <p class="brand">Soel Shoe Company</p>
 ```
 
 The CSS
-```
+```css
 .brand{
 
 }
@@ -40,12 +40,12 @@ If only one element is to be styled in a specific manner, the `id` attribute is 
 An example:
 
 The HTML
-```
+```html
 <p id="solo" class="brand">Solo Show Company</p>
 ```
 
 The CSS
-```
+```css
 #solo{
     color:purple;
 }
@@ -59,7 +59,7 @@ A CSS psuedo class refers to a keyword that is added to a selector which represe
 
 The syntax is as follows:
 
-```
+```css
 selector:pseudo-class{
     propery:value;
 }
@@ -79,7 +79,8 @@ Some examples are:
 
 An example:
 
-```
+```css
+
 img[alt]{
 
 }
@@ -91,7 +92,7 @@ If the purpose is to give multiple different kinds of elements the same styling,
 
 An example, to style all headings to have the same font:
 
-```
+```css
 h1, h2, h3, h4, h5, h6{
     font-family: "Helvetica", "Arial", san-serif;
 } 

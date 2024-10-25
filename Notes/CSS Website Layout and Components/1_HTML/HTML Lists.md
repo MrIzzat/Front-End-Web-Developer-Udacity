@@ -4,7 +4,7 @@ Unordered lists are great for listing items without a particular order, like bul
 
 An example:
 
-```
+```html
 <p>New puppy shopping list</p>
 
 <ul>
@@ -35,7 +35,7 @@ Ordered lists are used to create an ordered list. They are useful when the list 
 
 An example:
 
-```
+```html
 <p>Steps after adopting a puppy</p>
 <ol>
     <li>Spoil the puppy</li>
@@ -59,7 +59,7 @@ There is a third kind of list called a discription list `<dl>`, it encloses a gr
 
 An example:
 
-```
+```html
 <p>Cryptids of Cornwall:</p>
 
 <dl>

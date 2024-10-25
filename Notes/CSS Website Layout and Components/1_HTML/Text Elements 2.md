@@ -3,13 +3,14 @@
 Headings in HTML are used to distinguish a title from the content. There are 6 levels of headings ranging from 1-6, with 1 creating the largest header and 6 creating the smallest.
 
 An example:
-
-`<h1>Observable Universe</h1>`
-`<h2>Milky Way Galaxy</h2>`
-`<h3>Earth</h3>`
-`<h4>USA</h4>`
-`<h5>NorFolk, VA</h5>`
-`<h6>Main Street</h6>`
+```html
+<h1>Observable Universe</h1>
+<h2>Milky Way Galaxy</h2>
+<h3>Earth</h3>
+<h4>USA</h4>
+<h5>NorFolk, VA</h5>
+<h6>Main Street</h6>
+```
 
 <h1>Observable Universe</h1>
 <h2>Milky Way Galaxy</h2>
@@ -26,7 +27,7 @@ Paragraphs `<p>` are the most used HTML element because they act as default bloc
 
 An example:
 
-```
+```html
 <p>
   The sweet-faced and loving Labrador Retriever is actually one of the most
   popular dog breeds.
@@ -54,7 +55,7 @@ The span element is used to group text together, usually for styling purposes (t
 
 An example:
 
-```
+```html
 <style>
 p {
   color: black;
@@ -90,6 +91,15 @@ Blockquotes are used to identify a citation
 
 An example:
 
+```html
+<blockquote cite="https://www.wikiwand.com/en/Scooby-Doo_(character)">
+<p>Ruh-roh--RAGGY!!!</p>
+
+<footer>—Scooby Doo, <cite>Mystery Incorporated</cite></footer>
+
+</blockquote>
+```
+
 <blockquote cite="https://www.wikiwand.com/en/Scooby-Doo_(character)">
 <p>Ruh-roh--RAGGY!!!</p>
 
@@ -101,7 +111,7 @@ An example:
 
 Spacing between code in an HTML file does not affect hte positioning of elements in the browser, so they must be done manually. Line breaks are used to create a new line.
 
-```
+```html
 <p>
   I jump in delight<br />
   I run off in frenzy<br />

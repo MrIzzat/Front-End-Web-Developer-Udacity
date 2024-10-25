@@ -11,7 +11,7 @@ The head tag `<head>` goes into the HTML tag `<html>` before the body tag `<body
 
 An example:
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,7 +32,7 @@ The family tree relationship is also called a hierarchy. It's important to know 
 
 An example:
 
-```
+```html
 <body>
     <p>This paragraph is a child of the body</p>
 </body>
@@ -40,7 +40,7 @@ An example:
 
 The `<p>` element is a child of the `<body>` element.
 
-```
+```html
 <body>
     <div>
         <h1>Sibling to p, grandchild to body</h1>

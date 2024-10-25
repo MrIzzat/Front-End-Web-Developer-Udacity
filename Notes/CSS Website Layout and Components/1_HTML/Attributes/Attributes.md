@@ -12,7 +12,7 @@ The `<img>` tag can be used to display an image onto a web page.
 
 An example:
 
-```
+```html
 <img
 src="nefertiti.png"
 alt = "A Smiling Labrador Retriever"
@@ -37,7 +37,7 @@ Links are used to link other documents in the website with the current web page,
 There also the `rel`, which is used for specifying the relationship between the current and linked document and `target`, which is used to specify where the linked document is opened, attributes.
 
 An example:
-```
+```html
 <a href="https://thelabradorclub.com" rel="noopener" targets="_blank">Join the Labrador Retriever Club</a>
 ```
 

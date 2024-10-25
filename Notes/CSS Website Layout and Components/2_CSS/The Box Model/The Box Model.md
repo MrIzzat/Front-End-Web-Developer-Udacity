@@ -48,7 +48,7 @@ Margins represent the space surrounding the border. It's the space that's betwee
 
 Every box on a webpage can be seen by adding this CSS rule:
 
-```
+```css
 * {
   border: 1px solid red !important;
 }

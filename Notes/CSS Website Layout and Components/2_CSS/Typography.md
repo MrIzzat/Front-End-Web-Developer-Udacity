@@ -7,7 +7,7 @@ The text alignment of text in an element can be modified with use of the `text-a
 
 An example:
 
-```
+```css
 p{
     text-align:left;
 }
@@ -18,7 +18,7 @@ p{
 The `text-decoration` property deteremines if a text should be underlined or not. Setting it to `none` can remove the default underline in hyperlinks.
 
 An example:
-```
+```css
 a {
     text-decoration: none;
 }

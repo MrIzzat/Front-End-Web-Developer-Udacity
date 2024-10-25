@@ -11,7 +11,7 @@ The `grid-area` property defines the space ana element takes up by setting the v
 
 An example:
 
-```
+```css
 grid-area: 1/2/3/3;
 ```
 
@@ -28,7 +28,7 @@ The grid area for that element will take up the first row to the start of the th
 
 An example:
 
-```
+```css
 grid-template-areas:
 "top top"
 "bottomLeft bottomRight"
