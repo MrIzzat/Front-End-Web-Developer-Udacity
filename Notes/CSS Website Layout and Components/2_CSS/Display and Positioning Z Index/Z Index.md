@@ -4,7 +4,8 @@ Elements can overlap for many reasons. Elements positioned abosolutely can overl
 
 For example, for two rectangles positioned absolutely and top of eacher other:
 
-```
+
+```html
 <style>
 .box {
     width: 200px;
@@ -34,7 +35,7 @@ For example, for two rectangles positioned absolutely and top of eacher other:
 
 By default, box two will appear over box one, since it's the last element entered into the DOM (comes after box one is in the code). Box one can be set to display over box two by setting it's `z-index` to be higher than box two. The CSS would look like this:
 
-```
+```css
 #one {
     background: red;
     top: 100px;

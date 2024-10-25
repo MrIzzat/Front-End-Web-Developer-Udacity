@@ -6,7 +6,7 @@ There are three ways to declare a variable in JavaScript:
 
  If a variable is defined in a scope using `var` but is reached by code, it will have a value of undefined but it will not raise a reference error. Like this:
 
- ```
+ ```js
 function getClothing(isCold) {
   if (isCold) {
     var freezing = 'Grab a jacket!';
@@ -20,7 +20,7 @@ function getClothing(isCold) {
 
  A variable `let` on the other hand will raise an error. Like in this example:
 
-```
+```js
 function getClothing(isCold) {
   if (isCold) {
     const freezing = 'Grab a jacket!';
@@ -38,7 +38,7 @@ This is do to **Hoisting**. Hoisting refers to all variables declared with `var`
 
 That means a function like this:
 
- ```
+ ```js
 function getClothing(isCold) {
   if (isCold) {
     var freezing = 'Grab a jacket!';
@@ -51,7 +51,7 @@ function getClothing(isCold) {
 
  Is actually executed like this:
 
-  ```
+```js
 function getClothing(isCold) {
   var freezing, hot;
   if (isCold) {
@@ -69,7 +69,7 @@ This means a variable defined by `let` or `const` is stuck in **temporal dead zo
 
 An example:
 
- ```
+ ```js
 function getClothing(isCold) {
   if (isCold) {
     let freezing = 'Grab a jacket!';
