@@ -16,8 +16,10 @@ function getClothing(isCold) {
   }
 }
  ```
- This outputs "undefined"
-
+ This outputs:
+ ```
+ "undefined"
+```
  A variable `let` on the other hand will raise an error. Like in this example:
 
 ```js
@@ -31,8 +33,10 @@ function getClothing(isCold) {
 }
 ```
 
-This will output "ReferenceError: freezing not defined"
-
+This will output 
+```
+ReferenceError: freezing not defined
+```
 
 This is do to **Hoisting**. Hoisting refers to all variables declared with `var` being raised to the top of the funciton scope during execution.
 

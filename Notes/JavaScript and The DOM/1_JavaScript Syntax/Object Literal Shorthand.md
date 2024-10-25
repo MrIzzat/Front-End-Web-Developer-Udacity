@@ -16,8 +16,10 @@ const gemstone = {
 
 console.log(gemstone);
 ```
-Outputs: Object {type: "quartz", color: "rose", carat: 21.29}
-
+Outputs:
+```
+ Object {type: "quartz", color: "rose", carat: 21.29}
+```
 
 Instead of typing the variable names in repetition, It can be written in a shorter way:
 

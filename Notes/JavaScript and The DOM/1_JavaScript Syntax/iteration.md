@@ -20,3 +20,4 @@ const names = ['James', 'Kavita', 'Richard'];
 for (const name of names){
     console.log(name);
 }
+```

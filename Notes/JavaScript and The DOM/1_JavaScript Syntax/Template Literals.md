@@ -14,7 +14,10 @@ const teacher = {
 let message = student.name + 'please see ' + teacher.name + ' in ' +teacher.room + 'to pick up your report card.';
 ```
 
-`message` will contain: `Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.`
+`message` will contain: 
+```
+Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.
+```
 
 Syntax wise, it will do what is needed. But it will make the code a lot less readable when the string needs to be multi-line, like this:
 
@@ -51,7 +54,10 @@ An example:
 let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`; 
 ```
 
-Which outputs: `Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.`
+Which outputs: 
+```
+Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.
+```
 
 
 Template literals with multi line expressions can look like this:

@@ -11,10 +11,14 @@ const z = point[2];
 
 console.log(x, y, z);
 ```
-Outputs: 10 25 -34
+Outputs:
+```
+ 10 25 -34
+```
 
 This shows extracting values from an array.
 
+<br>
 
 ```js
 const gemstone = {
@@ -31,8 +35,10 @@ console.log(type, color, carat);
 
 ```
 
-Outputs: quartz rose 21.29
-
+Outputs: 
+```
+quartz rose 21.29
+```
 This shows extracting values from an object.
 
 # Destructing
@@ -48,8 +54,11 @@ const [x,y,z] = point;
 
 console.log(x,y,z);
 ```
-Outputs: 10 25 -34
-
+Outputs: 
+```
+10 25 -34
+```
+\
 When using brackets `[]`, it represents an array being destructed into the values inside the brackets. Indexes don't need to specified in the array because they are implied (no need to say x=points[0] etc.).
 
 Some values can be ignored by leaving an empty space in it's place and placing a comma in it's place, for example:
@@ -74,8 +83,11 @@ const {type, color, carat} = gemstone;
 
 console.log(type, color, carat);
 ```
-Outputs: quartz rose 21.29
-
+Outputs: 
+```
+quartz rose 21.29
+```
+\
 Objects can be destructed by using the curly braces `{ }`. Because `type`, `color` and `carat` are already in the object `gemstone` as keys, they will automatically be associated with the key they are equal to.
 
 A value from an object can be specified. For example:
