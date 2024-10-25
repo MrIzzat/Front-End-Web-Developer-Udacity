@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+}
+
+.concat,
+.template-literal {
+    margin: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.name {
+    align-self: start;
+}
+
+.picture {
+    border: 2px solid #b181ff;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.description {
+    background-color: #fff;
+    border: 2px solid #bdea09ff;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.fact {
+    font-style: italic;
+}
+
+.details {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
