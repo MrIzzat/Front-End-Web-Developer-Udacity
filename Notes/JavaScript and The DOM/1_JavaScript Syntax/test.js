@@ -1,4 +1,7 @@
-const fruits = ["apples", "bananas", "pears"];
-const vegetables = ["corn", "potatoes", "carrots"];
-const produce = [...fruits, ...vegetables];
-console.log(produce);
+const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(
+    name => {
+        name.toLowerCase();
+        name.toUpperCase();
+    return name;});
+
+console.log(...upperizedNames)
