@@ -1,0 +1,1 @@
+The full list of interfaces that can be accessed can be found [here](https://developer.mozilla.org/en-US/docs/Web/API) *Also known as web API interfaces*
