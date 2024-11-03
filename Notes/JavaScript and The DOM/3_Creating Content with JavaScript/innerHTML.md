@@ -5,3 +5,16 @@ As opposed to the `.innerHTML`, `.outerHTML` can also be used but it's use is ra
 
 
 If there are extra `\n` in the output text while using the mentioned functions, `.trim()` can be used to remove them and make the output resemble HTML more.
+
+`.childNodes[i].nodeValue.trim()` can be used to modify only text of only certain children specified by `i`.
+
+
+The HTML can be changed just by doing an assignment.
+
+For example:
+
+```js
+const card = document.querySelector('.card');
+
+card.innerHTML = "<h1>HI</h1>"
+```
