@@ -2,3 +2,6 @@
 
 As opposed to the `.innerHTML`, `.outerHTML` can also be used but it's use is rare. `.outerHTML` returns the element itself as well as its children. In other words, it returns the element itself as well as what's contained in it.
 
+
+
+If there are extra `\n` in the output text while using the mentioned functions, `.trim()` can be used to remove them and make the output resemble HTML more.
