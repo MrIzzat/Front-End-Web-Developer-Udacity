@@ -37,3 +37,5 @@ The difference between `.textContent` and `.innerText` is that `.textContent` wi
 It's recommended to use `textContent` when altering text and `innerText` when trying to grab information for a user.
 
 But for all around use, `textContent` is the better choice.
+
+*`textContent` ignores any CSS styling*
