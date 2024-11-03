@@ -1,0 +1,4 @@
+`.innerHTML` is a property that is inherited from the Element interface. Every HTML element will have this property. It can be used for getting an element's HTML content, including all of its descendants. It can also be used for setting an element's HTML content. 
+
+As opposed to the `.innerHTML`, `.outerHTML` can also be used but it's use is rare. `.outerHTML` returns the element itself as well as its children. In other words, it returns the element itself as well as what's contained in it.
+
