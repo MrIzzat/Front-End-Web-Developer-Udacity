@@ -1,0 +1,1 @@
+As mentioned previously, the `"click"` event type activates with a mouse click. There are also others, such as `"dblclick"`, `"scroll"`, `"resize"`. The full list can be viewed [here](https://developer.mozilla.org/en-US/docs/Web/Events)
