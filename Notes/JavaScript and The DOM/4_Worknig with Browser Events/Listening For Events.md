@@ -17,17 +17,16 @@ Basic syntax of `addEventListener()`:
 
 ```js
 eventTarget.addEventListener(eventToListenFor, functionToActivate);
-
 ```
 
 An event listener needs three things:
 
-* An event target, also know nas the **target**
+* An event target, also known as the **target**
 * The type of event to listen to, also known as the **type**
 * A function to run when the event occurs, also known as the **listener**
 
 
-In the basic syntax, the `eventTarget` variable is the **target**. Everythign on the webpage is a event target, such as the `document` object or any element (`<p>` etc.).
+In the basic syntax, the `eventTarget` variable is the **target**. Everything on the webpage is a event target, such as the `document` object or any element (`<p>` etc.).
 
 The `eventToListenFor` variable represetns an event that should be listened for and responded to. There is a long list of things included, a few examples of which can be a click, double click, pressing key on keyboard, mouse wheel, submitting a form etc.
 
