@@ -1,0 +1,1 @@
+This udacity webpage replica is just to have a playground to test out some JavaScript code that interacts with the DOM, where a webpage is needed.
