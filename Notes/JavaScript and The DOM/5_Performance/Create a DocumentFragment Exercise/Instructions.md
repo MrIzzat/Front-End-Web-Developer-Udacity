@@ -1,0 +1,1 @@
+Refactor the code in `app.js` to use DocumentFragment. Your code should only append to the body element once.
