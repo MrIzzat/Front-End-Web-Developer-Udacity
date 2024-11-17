@@ -10,7 +10,7 @@ for (let i=0; i<200; i++){
 
     newElement.textContent = 'This is paragraph number ' +i;
 
-    document.body.appendchild(newElement);
+    document.body.appendChild(newElement);
 }
 ```
 
