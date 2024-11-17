@@ -2,7 +2,7 @@
 
 **Reflow** is the process the browser does to calculate the laout of the page. It happens when the DOM is first displayed (usually after the DOM and CSS have been loaded) and also happens whenever there is a change to the DOM. It's an expensive and slow process.
 
-**Repaint** happens after the reflow process. It occurs as the browser draws the new layout onto the screen. It's a fairly quick process but occurence of it should be limited.
+**Repaint** happens after the reflow process. It occurs as the browser draws the new layout onto the screen. It's a fairly quick process but occurence of it should be limited. It can be said to be the process of drawing the pixels onto thes screen.
 
 
 An example of when reflow and repaint might occur is when adding a CSS class to an element. This causes the browser to recaulate the layout of an entire page, meaning one reflow and one repaint.
