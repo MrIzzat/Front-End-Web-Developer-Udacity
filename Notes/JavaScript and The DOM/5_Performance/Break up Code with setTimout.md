@@ -54,3 +54,6 @@ The `count` varaible is used to keep track of how many paragraph elements have b
 
 
 Because of the use of `setTimeout()` the page won't freeze up while adding the paragraphs to the page.
+
+
+The numeber of reflows and repaints depends on the number of paragraphs is added a time, changing this number will change the number of reflows and repaints are done throughout this operation.
