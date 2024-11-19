@@ -16,6 +16,8 @@ body {
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
+
+
 }
 
 
@@ -133,7 +135,7 @@ section:nth-of-type(even) .landing__container {
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
 section:nth-of-type(odd) .landing__container::before {
-    content: '';
+    content: 'Odd';
     background: rgba(255, 255, 255, 0.187);
     position: absolute;
     z-index: -5;
@@ -145,7 +147,7 @@ section:nth-of-type(odd) .landing__container::before {
 }
 
 section:nth-of-type(even) .landing__container::before {
-    content: '';
+    content: 'Even';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
@@ -160,8 +162,8 @@ section:nth-of-type(even) .landing__container::before {
 }
 
 section:nth-of-type(3n) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
+    content: '3n';
+    background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
     right: 0;
@@ -175,7 +177,7 @@ section:nth-of-type(3n) .landing__container::after {
 }
 
 section:nth-of-type(3n + 1) .landing__container::after {
-    content: '';
+    content: '3n+1';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
@@ -196,6 +198,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    border: 2px solid red;
 }
 
 section.your-active-class .landing__container::before {
@@ -212,12 +215,12 @@ section.your-active-class .landing__container::after {
 @keyframes rotate {
 	from {
 		transform: rotate(0deg)
-		           translate(-1em)
+		           translate(1em)
 		           rotate(0deg);
 	}
 	to {
 		transform: rotate(360deg)
-		           translate(-1em) 
+		           translate(1em) 
 		           rotate(-360deg);
 	}
 }
