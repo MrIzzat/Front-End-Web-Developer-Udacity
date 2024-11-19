@@ -23,6 +23,8 @@
  * 
 */
 
+
+
 const main = document.querySelector('main');
 
 const fillerText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra
@@ -36,6 +38,9 @@ semper in tellus. Sed congue et odio sed euismod.
 Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel
 luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur
 porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.`
+
+const navBarList = document.getElementById("navbar__list");
+
 
 
 
@@ -52,9 +57,13 @@ porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis 
  * Begin Main Functions
  * 
 */
-//build the main
-const paragraphs = fillerText.split("\n\n")
 
+
+//build the main
+const paragraphs = fillerText.split("\n\n");
+
+const mainFrag = document.createDocumentFragment();
+const barFrag = document.createDocumentFragment();d
 
 for (let i=0; i<4 ; i++){
     const section = document.createElement('section');
@@ -62,7 +71,13 @@ for (let i=0; i<4 ; i++){
 
     const h2 = document.createElement('h2');
 
+    const navBarItem = document.createElement('li');
+
     h2.textContent = `Section ${i+1}`;
+    navBarItem.textContent = `Section ${i+1}`;
+
+    barFrag.appendChild(navBarItem);
+
 
     div.appendChild(h2);
 
@@ -76,9 +91,10 @@ for (let i=0; i<4 ; i++){
     
 
     section.appendChild(div);
-    main.appendChild(section);
+    mainFrag.appendChild(section);
 }
-
+main.appendChild(mainFrag);
+navBarList.appendChild(barFrag);
 
 // build the nav
 
@@ -100,7 +116,6 @@ for (let i=0; i<4 ; i++){
 // Scroll to section on link click
 
 // Set sections as active
-
 
 
 
