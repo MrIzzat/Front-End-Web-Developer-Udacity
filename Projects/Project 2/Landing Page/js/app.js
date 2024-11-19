@@ -63,7 +63,7 @@ const navBarList = document.getElementById("navbar__list");
 const paragraphs = fillerText.split("\n\n");
 
 const mainFrag = document.createDocumentFragment();
-const barFrag = document.createDocumentFragment();d
+const barFrag = document.createDocumentFragment();
 
 for (let i=0; i<4 ; i++){
     const section = document.createElement('section');
@@ -95,6 +95,8 @@ for (let i=0; i<4 ; i++){
 }
 main.appendChild(mainFrag);
 navBarList.appendChild(barFrag);
+
+
 
 // build the nav
 
