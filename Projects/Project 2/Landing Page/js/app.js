@@ -93,6 +93,7 @@ for (let i=0; i<4 ; i++){
     section.appendChild(div);
     mainFrag.appendChild(section);
 }
+
 main.appendChild(mainFrag);
 navBarList.appendChild(barFrag);
 
@@ -102,6 +103,17 @@ navBarList.appendChild(barFrag);
 
 
 // Add class 'active' to section when near top of viewport
+//Based on this https://stackoverflow.com/a/2231268/17870878
+$(document).scroll(function() {
+    var cutoff = $(window).scrollTop();
+    $('section').removeClass('your-active-class').each(function() {
+        if ($(this).offset().top+250 > cutoff) {
+            console.log(cutoff );
+            $(this).addClass('your-active-class');
+           return false; // stops the iteration after the first one on screen
+        }
+    });
+});
 
 
 // Scroll to anchor ID using scrollTO event
