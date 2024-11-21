@@ -66,9 +66,11 @@ const mainFrag = document.createDocumentFragment();
 const barFrag = document.createDocumentFragment();
 
 for (let i=0; i<4 ; i++){
+
     const section = document.createElement('section');
     section.setAttribute("id",`section${i+1}`);
     section.setAttribute("data-nav",`Section ${i+1}`);
+
 
     if(i==0){
         section.setAttribute("class","your-active-class");
@@ -80,24 +82,21 @@ for (let i=0; i<4 ; i++){
     
 
     const h2 = document.createElement('h2');
-
     const navBarItem = document.createElement('li');
     const navBarItemAnchor = document.createElement('a');
+
 
     h2.textContent = `Section ${i+1}`;
     navBarItemAnchor.textContent = `Section ${i+1}`;
     navBarItemAnchor.setAttribute("href", `section${i+1}`);
 
+
     navBarItem.appendChild(navBarItemAnchor);
-
     barFrag.appendChild(navBarItem);
-
-
     div.appendChild(h2);
 
 
     for (const p of paragraphs){
-
         const paragraph = document.createElement('p');
         paragraph.textContent = p;
         div.appendChild(paragraph);
@@ -120,10 +119,15 @@ navBarList.appendChild(barFrag);
 //Based on this https://stackoverflow.com/a/2231268/17870878
 $(document).scroll(function() {
     var cutoff = $(window).scrollTop();
+    $('#activeSectionAnchor').removeAttr('id');
     $('section').removeClass('your-active-class').each(function() {
         if ($(this).offset().top+250 > cutoff) {
             //console.log(cutoff );
             $(this).addClass('your-active-class');
+
+            const sectionAnchor = document.querySelector(`[href=${this.getAttribute("id")}]`);
+            sectionAnchor.setAttribute("id","activeSectionAnchor")
+
            return false; // stops the iteration after the first one on screen
         }
     });
