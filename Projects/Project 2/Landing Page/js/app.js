@@ -82,9 +82,13 @@ for (let i=0; i<4 ; i++){
     const h2 = document.createElement('h2');
 
     const navBarItem = document.createElement('li');
+    const navBarItemAnchor = document.createElement('a');
 
     h2.textContent = `Section ${i+1}`;
-    navBarItem.textContent = `Section ${i+1}`;
+    navBarItemAnchor.textContent = `Section ${i+1}`;
+    navBarItemAnchor.setAttribute("href", `section${i+1}`);
+
+    navBarItem.appendChild(navBarItemAnchor);
 
     barFrag.appendChild(navBarItem);
 
@@ -129,15 +133,15 @@ $(document).scroll(function() {
 // Scroll to anchor ID using scrollTO event
 
 navBarList.addEventListener("click",(event)=>{
-    console.log(event.target);
-    let targetName = event.target.textContent;
-    targetName = targetName.toLowerCase();
-    targetName = targetName.replace(" ","");
-    console.log(targetName);
+    event.preventDefault();
+    // console.log(event.target.nodeName);
+    if (event.target.nodeName == "A"){
+        let targetName = event.target.getAttribute("href");
 
-    const sectionTarget = document.getElementById(targetName);
-
-    sectionTarget.scrollIntoView({behavior: 'smooth', block:'end'});
+        const sectionTarget = document.getElementById(targetName);
+    
+        sectionTarget.scrollIntoView({behavior: 'smooth', block:'end'});
+    }
 })
 
 
