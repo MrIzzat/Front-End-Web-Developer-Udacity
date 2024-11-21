@@ -62,10 +62,29 @@ section {
     min-height: 80vh;
 }
 
+button {
+    display: none;
+    position: fixed;
+    margin-top: -140px;
+    margin-left: 5px;
+
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    z-index: 5;
+
+    background: rgb(219, 241, 255);
+}
+
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.nav{
+    display: none;
+}
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;

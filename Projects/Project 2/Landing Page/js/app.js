@@ -41,7 +41,7 @@ porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis 
 
 const navBarList = document.getElementById("navbar__list");
 
-
+const navBar = document.querySelector("nav");
 
 
 /**
@@ -126,12 +126,16 @@ $(document).scroll(function() {
             $(this).addClass('your-active-class');
 
             const sectionAnchor = document.querySelector(`[href=${this.getAttribute("id")}]`);
-            sectionAnchor.setAttribute("id","activeSectionAnchor")
+            sectionAnchor.setAttribute("id","activeSectionAnchor");
 
            return false; // stops the iteration after the first one on screen
         }
     });
 });
+
+
+
+
 
 
 // Scroll to anchor ID using scrollTO event
@@ -146,7 +150,44 @@ navBarList.addEventListener("click",(event)=>{
     
         sectionTarget.scrollIntoView({behavior: 'smooth', block:'end'});
     }
-})
+});
+
+
+//If scrolling, show nav bar else have the nav bar hidden
+
+let timer = null;
+
+window.addEventListener('scroll', function() {
+    if(timer !== null) {
+        navBar.style.display = "block";
+        clearTimeout(timer);        
+    }
+    timer = setTimeout(function() {
+        navBar.style.display = "none"; 
+    }, 5000);
+});
+
+
+// Show back to Top Button when too low
+
+const btnToTop = document.querySelector("button");
+
+document.addEventListener("scroll", (event) => {
+    //console.log(document.body.getBoundingClientRect().top);
+    if(document.body.getBoundingClientRect().top<-1500){
+        btnToTop.style.display="block";
+    }else{
+        btnToTop.style.display="none";
+    }
+});
+
+
+
+// Back to Top Button
+
+btnToTop.addEventListener("click", (event)=>{
+    window.scrollTo({top: 0, behavior: "smooth"});
+});
 
 
 /**
