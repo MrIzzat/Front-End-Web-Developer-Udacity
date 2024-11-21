@@ -59,7 +59,7 @@ const navBarList = document.getElementById("navbar__list");
 */
 
 
-//build the main
+//build the main and build the nav
 const paragraphs = fillerText.split("\n\n");
 
 const mainFrag = document.createDocumentFragment();
@@ -67,7 +67,17 @@ const barFrag = document.createDocumentFragment();
 
 for (let i=0; i<4 ; i++){
     const section = document.createElement('section');
+    section.setAttribute("id",`section${i+1}`);
+    section.setAttribute("data-nav",`Section ${i+1}`);
+
+    if(i==0){
+        section.setAttribute("class","your-active-class");
+    }
+
+
     const div = document.createElement('div');
+    div.setAttribute('class','landing__container')
+    
 
     const h2 = document.createElement('h2');
 
@@ -99,16 +109,16 @@ navBarList.appendChild(barFrag);
 
 
 
-// build the nav
 
 
 // Add class 'active' to section when near top of viewport
+
 //Based on this https://stackoverflow.com/a/2231268/17870878
 $(document).scroll(function() {
     var cutoff = $(window).scrollTop();
     $('section').removeClass('your-active-class').each(function() {
         if ($(this).offset().top+250 > cutoff) {
-            console.log(cutoff );
+            //console.log(cutoff );
             $(this).addClass('your-active-class');
            return false; // stops the iteration after the first one on screen
         }
@@ -117,6 +127,18 @@ $(document).scroll(function() {
 
 
 // Scroll to anchor ID using scrollTO event
+
+navBarList.addEventListener("click",(event)=>{
+    console.log(event.target);
+    let targetName = event.target.textContent;
+    targetName = targetName.toLowerCase();
+    targetName = targetName.replace(" ","");
+    console.log(targetName);
+
+    const sectionTarget = document.getElementById(targetName);
+
+    sectionTarget.scrollIntoView({behavior: 'smooth', block:'end'});
+})
 
 
 /**
