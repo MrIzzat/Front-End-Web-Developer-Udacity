@@ -62,20 +62,64 @@ section {
     min-height: 80vh;
 }
 
-button {
-    display: none;
-    position: fixed;
-    margin-top: -140px;
-    margin-left: 5px;
+@media(min-width: 1100px){
 
-    padding: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-    z-index: 5;
+    button {
+        display: none;
+        position: fixed;
+        margin-top: 10px;
+        margin-left: 5px;
+    
+        padding: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+        z-index: 5;
+    
+        background: rgb(219, 241, 255);
+    }
 
-    background: rgb(219, 241, 255);
 }
+
+@media(min-width: 800px) and (max-width:1100px){
+    button {
+        display: none;
+        position: fixed;
+        margin-top: 10px;
+        margin-left: 5px;
+    
+        padding: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+        z-index: 5;
+    
+        background: rgb(219, 241, 255);
+    }
+
+}
+
+
+
+
+
+@media(max-width: 800px){
+    button {
+        display: none;
+        position: fixed;
+        margin-top: 20px;
+        margin-left: 5px;
+    
+        padding: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+        z-index: 5;
+    
+        background: rgb(219, 241, 255);
+    }
+}
+
 
 
 /* ---- Module Rules ---- */
@@ -226,8 +270,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    border: 2px solid red;
-    margin-top: 2px;
+    /* border: 2px solid red;
+    margin-top: 2px; */
 }
 
 section.your-active-class .landing__container::before {
