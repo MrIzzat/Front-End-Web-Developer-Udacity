@@ -63,7 +63,7 @@ const navBar = document.querySelector("nav");
 const paragraphs = fillerText.split("\n\n");
 
 const mainFrag = document.createDocumentFragment();
-const barFrag = document.createDocumentFragment();
+
 
 for (let i=0; i<4 ; i++){
 
@@ -82,17 +82,8 @@ for (let i=0; i<4 ; i++){
     
 
     const h2 = document.createElement('h2');
-    const navBarItem = document.createElement('li');
-    const navBarItemAnchor = document.createElement('a');
-
-
     h2.textContent = `Section ${i+1}`;
-    navBarItemAnchor.textContent = `Section ${i+1}`;
-    navBarItemAnchor.setAttribute("href", `section${i+1}`);
 
-
-    navBarItem.appendChild(navBarItemAnchor);
-    barFrag.appendChild(navBarItem);
     div.appendChild(h2);
 
 
@@ -102,37 +93,112 @@ for (let i=0; i<4 ; i++){
         div.appendChild(paragraph);
     }
     
-
     section.appendChild(div);
     mainFrag.appendChild(section);
 }
 
 main.appendChild(mainFrag);
+
+
+
+// Build the navbar
+
+const barFrag = document.createDocumentFragment();
+const sections = document.querySelectorAll("section");
+
+for (const sec of sections){
+
+    const navBarItem = document.createElement('li');
+    const navBarItemAnchor = document.createElement('a');
+
+    navBarItemAnchor.textContent = sec.getAttribute("data-nav");
+    navBarItemAnchor.setAttribute("href", `#${sec.getAttribute("data-nav")}`);
+
+    navBarItem.appendChild(navBarItemAnchor);
+    barFrag.appendChild(navBarItem);
+
+}
+
+
+
 navBarList.appendChild(barFrag);
-
-
-
-
 
 // Add class 'active' to section when near top of viewport
 
+// Rejected Way
 //Based on this https://stackoverflow.com/a/2231268/17870878
-$(document).scroll(function() {
-    var cutoff = $(window).scrollTop();
-    $('#activeSectionAnchor').removeAttr('id');
-    $('section').removeClass('your-active-class').each(function() {
-        if ($(this).offset().top+250 > cutoff) {
-            //console.log(cutoff );
-            $(this).addClass('your-active-class');
+// $(document).scroll(function() {
+//     var cutoff = $(window).scrollTop();
+//     $('#activeSectionAnchor').removeAttr('id');
+//     $('section').removeClass('your-active-class').each(function() {
+//         if ($(this).offset().top+250 > cutoff) {
+//             //console.log(cutoff );
+//             $(this).addClass('your-active-class');
 
-            const sectionAnchor = document.querySelector(`[href=${this.getAttribute("id")}]`);
-            sectionAnchor.setAttribute("id","activeSectionAnchor");
+//             const sectionAnchor = document.querySelector(`[href=${this.getAttribute("id")}]`);
+//             sectionAnchor.setAttribute("id","activeSectionAnchor");
 
-           return false; // stops the iteration after the first one on screen
+//            return false; // stops the iteration after the first one on screen
+//         }
+//     });
+// });
+
+function isElementInViewport (el) {
+
+    let rect = el.getBoundingClientRect();
+
+    //if (el.getAttribute("id")=="section1")
+       // console.log(`${el.getAttribute("id")} ${rect.top}`);
+        //console.log(`${window.innerHeight}`);
+
+
+    if (window.innerHeight>=1100){
+        return (
+            rect.top >= -580 &&
+            rect.left >= 0 &&
+            (rect.bottom <= (window.innerHeight)) &&  //|| document.documentElement.clientHeight) && /* or $(window).height() */
+            rect.right <= (window.innerWidth ) /* or $(window).width() */
+        );
+    }
+    else if (window.innerHeight>=800 && window.innerHeight <1100 ){
+            return (
+                rect.top >= -400 &&
+                rect.left >= 0 &&
+                (rect.bottom <= (window.innerHeight+200)) &&  //|| document.documentElement.clientHeight) && /* or $(window).height() */
+                rect.right <= (window.innerWidth ) /* or $(window).width() */
+            );
+        }
+        else{
+                return (
+                    rect.top >= -700 &&
+                    rect.left >= 0 &&
+                    (rect.bottom <= (window.innerHeight+400)) &&  //|| document.documentElement.clientHeight) && /* or $(window).height() */
+                    rect.right <= (window.innerWidth ) /* or $(window).width() */
+                );
+        }
+
+}
+
+
+document.addEventListener("scroll", (event)=>{
+
+
+    const sections = document.querySelectorAll("section");
+    
+
+    sections.forEach((element) =>{
+        let sectionAnchor = document.querySelector(`[href="#${element.getAttribute("data-nav")}"]`);
+        //console.log(sectionAnchor)
+        if(isElementInViewport(element)){
+            element.setAttribute("class",'your-active-class');
+           sectionAnchor.setAttribute("id","activeSectionAnchor");
+        }
+        else{
+            element.removeAttribute('class');
+           sectionAnchor.removeAttribute("id");
         }
     });
 });
-
 
 
 
@@ -144,9 +210,9 @@ navBarList.addEventListener("click",(event)=>{
     event.preventDefault();
     // console.log(event.target.nodeName);
     if (event.target.nodeName == "A"){
-        let targetName = event.target.getAttribute("href");
+        let targetName = event.target.getAttribute("href").replace("#","");
 
-        const sectionTarget = document.getElementById(targetName);
+        const sectionTarget = document.querySelector(`[data-nav="${targetName}"]`);
     
         sectionTarget.scrollIntoView({behavior: 'smooth', block:'end'});
     }

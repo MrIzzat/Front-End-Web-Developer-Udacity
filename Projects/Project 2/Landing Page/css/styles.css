@@ -107,7 +107,7 @@ section {
     button {
         display: none;
         position: fixed;
-        margin-top: 20px;
+        margin-top: 0px;
         margin-left: 5px;
     
         padding: 1em;
@@ -137,10 +137,7 @@ section {
 
 .navbar__menu li {
     display: inline-block;
-    border: 2px blue solid;
     color: black;
-    margin-right: 2px;
-    margin-left: 2px;
 }
 
 .navbar__menu #navbar__list a{
@@ -270,8 +267,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    /* border: 2px solid red;
-    margin-top: 2px; */
+    border: 2px solid black;
+    margin-top: 2px;
 }
 
 section.your-active-class .landing__container::before {
