@@ -9,7 +9,10 @@ container.appendChild(paragraph);
 const paragraph2 = document.createElement('p');
 paragraph2.textContent = "Button Clicked";
 paragraph2.style.color = "orange";
-paragraph2.style.display = "none"
+paragraph2.style.display = "none";
+
+
+document.body.appendChild(paragraph2);
 
 paragraph2.addEventListener("mouseover", (event) => {
     paragraph2.style.color = "blue";
@@ -38,5 +41,5 @@ const button = document.getElementById("clicked");
 
 button.addEventListener("click", (event) =>{
     paragraph2.style.display = "block";
-    container.appendChild(paragraph2);
+
 });
