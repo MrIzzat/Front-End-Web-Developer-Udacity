@@ -23,3 +23,6 @@ function listener(){
 The `app.listen()` function takes a port and a callback function that is run after the function is executed.
 
 The code can be test in `server.js`. *Note it still needs routing to work as expected*
+
+
+A more realistic version of server code can be found in `FullServer.js`.

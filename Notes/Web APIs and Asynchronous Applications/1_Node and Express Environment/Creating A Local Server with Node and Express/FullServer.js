@@ -18,3 +18,11 @@ app.use (bodyParser.json());
 
 //intializing the main project folder
 app.use(express.static('website'));//This allows access files that are supposed to be on the client side
+
+const port = 8000;
+const server = app.listen(port, listener);
+
+function listener(){
+    console.log('Server is Running');
+    console.log(`running on localhost:${port}`);
+}
