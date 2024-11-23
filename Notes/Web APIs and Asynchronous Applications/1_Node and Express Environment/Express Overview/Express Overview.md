@@ -34,3 +34,4 @@ app.use(cors());
 
 The first line imports the `body-parser` middleware and stores it into a variable. The second and third line are used to configure express to use `body-parser` as a middleware. The last two lines add `Cors` for corss origin allowance.
 
+Check out the example code in `express.js`
