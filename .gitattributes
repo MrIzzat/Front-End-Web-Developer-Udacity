@@ -1,0 +1,3 @@
+*.html linguist-vendored
+*.toc linguist-vendored
+*.css linguist-vendored
