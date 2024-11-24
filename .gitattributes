@@ -1,3 +1,7 @@
 *.html linguist-vendored
 *.js linguist-vendored
+<<<<<<< HEAD
 *.css linguist-vendored
+=======
+*.css linguist-vendored
+>>>>>>> b1d60d144f14a1e10879dfb5f919e01d290f20dd
