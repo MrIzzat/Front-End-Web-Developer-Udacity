@@ -8,3 +8,5 @@ The `app.use(express.static('static'))` lines is usually used to point to a fold
 An example:
 
 ![](./fileStructureHierarchy.png)
+
+*Note: sometimes it's better to use `app.use(express.static(path.join(__dirname, '/static')));`*
