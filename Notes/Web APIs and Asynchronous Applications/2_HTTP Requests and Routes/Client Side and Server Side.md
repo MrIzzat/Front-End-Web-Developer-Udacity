@@ -40,4 +40,4 @@ postData('/add', {answer:42});
 
 The `fetch()` can be used by the client side code to send a HTTP request to a server. The `method` can be specified to what kind of HTTP request should be sent whether it be a **POST**, a **GET**, a **DELETE** etc. request. Some boiler plate information that is important is the `credentials`. The `headers` can be used to specified the the format of the content in the body, `application/json` refers to the body being in JSON format. The `body` needs make sure the data is formatted to be in JSON string form which is what `JSON.stringify()` does.
 
-Checkout the example in the `Client Side and Server Side exercise` folder.
+Checkout an example in the `Client Side and Server Side Exercise` folder.
