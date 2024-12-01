@@ -26,3 +26,12 @@ projectData["TEST"] = "TEST";
 app.get("/projectData",(req, res) => {
     res.send(JSON.stringify(projectData));
 })
+
+
+app.post("/addToProjectData", (req, res) => {
+    const data = req.body;
+    projectData.temperature = data.temperature;
+    projectData.date = data.date;
+    projectData.userResponse = data.userResponse;
+    console.log(projectData);
+})
