@@ -27,9 +27,11 @@ app.get("/projectData",(req, res) => {
 
 
 app.post("/addToProjectData", (req, res) => {
-    const data = req.body;
+    let data = req.body;
+
     projectData.temperature = data.temperature;
     projectData.date = data.date;
     projectData.userResponse = data.userResponse;
+
     console.log(projectData);
 })
