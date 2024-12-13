@@ -1,0 +1,8 @@
+{
+    "relativePath.ignore": [
+
+        "**/Udacity Webpage Replica Original/**",
+        "**/Udacity Webpage Replica Playground/**",
+        "**/node_modules/**"
+],
+}

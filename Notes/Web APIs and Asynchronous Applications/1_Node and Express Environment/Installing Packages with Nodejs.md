@@ -1,0 +1,1 @@
+The `npm i` or `npm install` command can be used to install all modules listed in the `package.json` file at once and add to or create a new `node_module` folder.
