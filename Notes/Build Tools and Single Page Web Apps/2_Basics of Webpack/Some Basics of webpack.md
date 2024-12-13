@@ -10,7 +10,7 @@ Webpack has the knowledge of the entire file structure of a project.
 
 In order for webpack to working, it will need a starting place. The starting place is called the **entry**. Webpack 4 creates a default setting for all of the required webpack configurations. In the default settings, the entry point is set to `index.js`.
 
-To set a custom entry point (or any other custom configurations), the `webpack.config.js` can be used.
+To set a custom entry point (or any other custom configurations), the `webpack.config.js` can be used to change the default webpack setup.
 
 The Core Concepts in web pack are:
 
