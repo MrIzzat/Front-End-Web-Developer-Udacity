@@ -1,0 +1,1 @@
+The [npmjs](https://www.npmjs.com/) website can be used to search for packages and to find more information about those packages.
