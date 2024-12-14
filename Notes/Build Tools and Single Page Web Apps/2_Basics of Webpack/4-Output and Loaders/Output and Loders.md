@@ -4,13 +4,17 @@ So far, webpack can only go so far as the create the `dist` folder with the `mai
 
 The next step is to customize the `output` of the webpack, which is the distribution folder `dist`. The `dist` folder is where webapck generates or "outputs" the bundles of assets that it creates from all the individual files.
 
+The output destination can be set manually using the `output` property, like this:
+
+```js
+output: { ...output options }
+```
 
 The source folder `src` is the folder that contains all the assets the developer builds. The distribution folder `dist` contains all of the assets that will be sent to the client. In other words, the webpage that is loading on the client's side is referencing the `dist` folder and not the `src` folder.
 
 Changes made to files in the `dist` folder will appear to the user but will be overwritten when the source files are rebuilt if these changes are not also done in the source files.
 
 Changes made to files in the source folder will not appear to the user until the source files are built into the `dist` folder.
-
 
 So far, the `main.js` file has been generated, but it's not being used by anything. All the useful JavaScript and CSS files are being referenced and used in `index.html`. These should no longer be referenced in the `index.html` as they'll all be bundled. The `index.html` file just needs one reference, to the `main.js` file:
 
