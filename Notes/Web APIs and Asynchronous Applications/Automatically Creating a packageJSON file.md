@@ -1,0 +1,1 @@
+The `npm init` command can be used to create a `package.json` file automatically with some base information.
