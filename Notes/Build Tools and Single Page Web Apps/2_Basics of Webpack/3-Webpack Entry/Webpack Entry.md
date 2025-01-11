@@ -6,7 +6,7 @@ Inside the webpak configuration file `webpack.config.js`, the new entry point ca
 
 ```js
 module.exports = {
-    entry = './src/client/index.js'
+    entry: './src/client/index.js'
 }
 ```
 

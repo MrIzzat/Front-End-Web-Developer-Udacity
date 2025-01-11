@@ -4,9 +4,11 @@ const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
+console.log(__dirname)
+
 app.use(express.static('src/client'))
 
-console.log(__dirname)
+
 
 app.get('/', function (_req, res) {
     res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
