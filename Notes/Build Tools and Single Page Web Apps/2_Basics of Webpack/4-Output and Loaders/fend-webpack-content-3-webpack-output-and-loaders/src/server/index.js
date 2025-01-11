@@ -6,13 +6,15 @@ const app = express()
 
 console.log(__dirname)
 
-app.use(express.static('src/client'))
+app.use(express.static(path.join(__dirname,'../client/views')))
+app.use(express.static(path.join(__dirname,'../client')))
+app.use(express.static(path.join(__dirname,'../../dist')))
 
 
 
-app.get('/', function (_req, res) {
-    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
-})
+// app.get('/', function (_req, res) {
+//     res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
+// })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
