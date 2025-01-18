@@ -44,4 +44,7 @@ const handleSubmit =  function (event) {
     Client.checkForName(formText)
 ```
 
+Some references in the code need to modified or updated.
+
+
 Now the code works!
