@@ -1,0 +1,26 @@
+@mixin background($imgpath, $position: 0 0,$repeat: no-repeat){
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+    }
+}
+
+header{
+    @include background('../images/cat.png');
+    width: 1000px;
+    height: 600px;
+}
+
+footer{
+    @include background('../images/tree.png');
+    width: 2200px;
+    height: 3000px;
+}
+
+@for $i from 1 through 11{
+    .placeholder-#{$i}{
+        background-color: rgba($color:#FF0000,$alpha:$i*0.1);
+        font-size: 16px+$i;
+    }
+}
