@@ -1,6 +1,6 @@
 The next step is to download the second branch `1-install-webpack` from [the repo](https://github.com/udacity/fend-webpack-content/tree/1-install-webpack)
 
-Next, the dependencies in the `package.json` file need to be installed. They can be installed with the command `npm install`, or `npm i` for short. Webpack will be contained as: `    "webpack": "^4.35.3"` and `"webpack-cli": "^3.3.5"`. It should look something like this:
+Next, the dependencies in the `package.json` file need to be installed. They can be installed with the command `npm install`, or `npm i` for short. Webpack will be contained as: `"webpack": "^4.35.3"` and `"webpack-cli": "^3.3.5"`. It should look something like this:
 ```json
 "dependencies": {
     "express": "^4.17.1",

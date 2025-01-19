@@ -21,7 +21,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 The plugin should be added to the `module.exports` as a new entry called `plugins`.
 
 ```js
-plugins: [it 
+plugins: [
     new HtmlWebPackPlugin({
         template: "./src/client/views/index.html",
         filename: "./index.html",

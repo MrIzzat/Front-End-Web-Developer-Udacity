@@ -1,3 +1,5 @@
+Libraries needed to set up Sass:
+
 ```bash
 npm i -D style-loader node-sass css-loader 
 ```
@@ -6,7 +8,7 @@ npm i -D style-loader node-sass css-loader
 npm i -D sass-loader
 ```
 
-To dev webpack config file:
+In the dev and prod webpack config file loaders section:
 
 ```js
 {
