@@ -6,6 +6,12 @@ Add the clean HTML library to the development config file.
 ```bash
 npm i -D clean-webpack-plugin
 ```
+Import it: (needs to be that exact same spelling)
+
+```js
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+```
+
 Add to the Plugins section:
 ```js
 plugins: [

@@ -47,7 +47,7 @@ Babel, like webpack, needs a configuration file, called `.babelrc`. It requires 
 
 ```json
 {
-    'presets': ['@babel/preset-env']
+    "presets": ["@babel/preset-env:"]
 }
 ```
 
