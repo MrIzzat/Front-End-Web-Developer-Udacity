@@ -1,0 +1,68 @@
+.travel-trip {
+    background: rgba(255, 0, 0, 0.1);
+    height: 400px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-areas: "image info";
+
+    
+
+    .trip-image{
+        grid-area: image;
+        border:1px solid black;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .trip-information{
+        grid-area: info;
+        border:1px solid black;
+        width: 100%;
+        justify-items: center;
+    }
+
+  }
+
+  .trip-buttons {
+    display: flex;
+    flex-direction: row;
+  
+    justify-content: space-between;
+  
+    width: 210px;
+  
+    cursor: pointer;
+    user-select: none;
+  
+    .save-trip-button {
+      background: white;
+      border: 3px solid black;
+  
+      font-size: 20px;
+      padding: 5px;
+      font-size: 20px;
+      padding: 5px;
+  
+      &:hover {
+        border: 3px solid rgba(255, 0, 0, 0.9);
+      }
+    }
+  
+    .remove-trip-button {
+      background: white;
+      border: 3px solid black;
+  
+      font-size: 20px;
+      padding: 5px;
+  
+      &:hover {
+        border: 3px solid rgba(255, 0, 0, 0.9);
+      }
+    }
+  }
+  
+  
+    
