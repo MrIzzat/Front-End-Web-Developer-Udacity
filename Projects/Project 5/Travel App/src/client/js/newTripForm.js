@@ -31,8 +31,8 @@ newTripButton.addEventListener("click", () => {
                           </div>
                           <div class="new-travel-departing-date">
                               <h2>Departing:</h2>
-                              <input placeholder="DD/MM/YYYY" type="text" required
-                                  pattern="([1-9]|[1-2][0-9]|[3][0-1])/([1-9]|[1][0-2])/([0-9][0-9][0-9][0-9])" form="base-form">
+                              <input placeholder="MM/DD/YYYY" type="text" required
+                                  pattern="([1-9]|[1][0-2])/([1-9]|[1-2][0-9]|[3][0-1])/([0-9][0-9][0-9][0-9])" form="base-form">
                           </div>
                           <div class="new-trip-buttons">
                               <div class="save-trip-form-button">save trip</div>
@@ -48,7 +48,13 @@ newTripButton.addEventListener("click", () => {
       if (baseForm.reportValidity()) {
         console.log("SUCCESS"); //Add as a trip
 
-        addNewTrip();
+        const newLocationString = document.getElementsByClassName("new-trip-destination")[0].lastElementChild.value
+        const newDateString = document.getElementsByClassName("new-travel-departing-date")[0].lastElementChild.value
+
+        console.log(newLocationString)
+        console.log(newDateString)
+        
+        addNewTrip(newLocationString, newDateString);
 
         removeNewTripForm();
       }
