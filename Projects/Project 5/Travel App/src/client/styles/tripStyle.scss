@@ -10,11 +10,20 @@
 
     
 
-    .trip-image{
+    .trip-image-container{
         grid-area: image;
         border:1px solid black;
-        width: 100%;
-        justify-items: center;
+        display: flex;
+        flex-direction: row;
+      
+        align-items: center;
+        justify-content: center;
+
+        .trip-image{
+          object-fit: contain;
+          height: max(400px-20px);
+        }
+
     }
 
     .trip-information{
@@ -22,6 +31,22 @@
         border:1px solid black;
         width: 100%;
         justify-items: center;
+
+        .countdown-trip{
+          font-size: 24px;
+        }
+
+        .title-weather-trip{
+          font-size: 24px;
+        }
+
+        .high-low-weather-trip{
+          font-size: 18px;
+        }
+
+        .cloudy-weather-trip{
+          font-size: 18px;
+        }
     }
 
   }
@@ -62,6 +87,8 @@
         border: 3px solid rgba(255, 0, 0, 0.9);
       }
     }
+
+
   }
   
   

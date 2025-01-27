@@ -1,3 +1,3 @@
 //Get the div that contains all the trips
 export const allTrips = document.getElementById("trips-list");
-export let globals = {numberOfTrips:0};
+export let globals = {numberOfTrips:0, serverURL:"http://localhost:8000"};

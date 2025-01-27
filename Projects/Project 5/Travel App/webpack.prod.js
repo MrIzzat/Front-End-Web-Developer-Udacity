@@ -3,7 +3,7 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin} = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-plugin")
+const OptimizeCssAssetsPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin")
 const WorkBoxPlugin = require("workbox-webpack-plugin")
 
