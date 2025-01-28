@@ -3,6 +3,33 @@ var Client;
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/client/index.js":
+/*!*****************************!*\
+  !*** ./src/client/index.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   baseForm: () => (/* binding */ baseForm)
+/* harmony export */ });
+/* harmony import */ var _styles_newTripFormStyle_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/newTripFormStyle.scss */ "./src/client/styles/newTripFormStyle.scss");
+/* harmony import */ var _styles_tripStyle_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/tripStyle.scss */ "./src/client/styles/tripStyle.scss");
+/* harmony import */ var _js_newTripForm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/newTripForm.js */ "./src/client/js/newTripForm.js");
+/* harmony import */ var _js_tripsList_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/tripsList.js */ "./src/client/js/tripsList.js");
+
+
+
+
+
+
+// Getting the base form, used for validating inputs
+var baseForm = document.getElementById("base-form");
+baseForm.addEventListener("submit", _js_newTripForm_js__WEBPACK_IMPORTED_MODULE_2__.turnOffDefault);
+(0,_js_newTripForm_js__WEBPACK_IMPORTED_MODULE_2__.addNewTrip)();
+
+/***/ }),
+
 /***/ "./src/client/js/globals.js":
 /*!**********************************!*\
   !*** ./src/client/js/globals.js ***!
@@ -30,57 +57,61 @@ var globals = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _globals_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./globals.js */ "./src/client/js/globals.js");
-/* harmony import */ var _tripsList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tripsList.js */ "./src/client/js/tripsList.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addNewTrip: () => (/* binding */ addNewTrip),
+/* harmony export */   turnOffDefault: () => (/* binding */ turnOffDefault)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../index.js */ "./src/client/index.js");
+/* harmony import */ var _globals_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./globals.js */ "./src/client/js/globals.js");
+/* harmony import */ var _tripsList_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tripsList.js */ "./src/client/js/tripsList.js");
+
 
 
 var newTripFormExists = false;
-
-// Getting the base form, used for validating inputs
-var baseForm = document.getElementById("base-form");
-baseForm.addEventListener("submit", function (event) {
+var turnOffDefault = function turnOffDefault(event) {
   event.preventDefault();
-});
+};
+var addNewTrip = function addNewTrip() {
+  //Get the button that adds new trips
+  var newTripButton = document.getElementById("add-trip-button");
+  newTripButton.addEventListener("click", function () {
+    //Only create a new "new trip form" if there isn't one on the screen
+    if (!newTripFormExists) {
+      newTripFormExists = true;
+      var newTrip = document.createElement("section");
 
-//Get the button that adds new trips
-var newTripButton = document.getElementById("add-trip-button");
-newTripButton.addEventListener("click", function () {
-  //Only create a new "new trip form" if there isn't one on the screen
-  if (!newTripFormExists) {
-    newTripFormExists = true;
-    var newTrip = document.createElement("section");
+      //class for style
+      newTrip.setAttribute("class", "new-travel-trip");
 
-    //class for style
-    newTrip.setAttribute("class", "new-travel-trip");
+      //Add the content (inputs, buttons etc.)
+      newTrip.innerHTML = "                    <div class=\"new-trip-destination\">\n                              <h2>My trip to:</h2>\n                              <input form=\"base-form\" required type=\"text\" placeholder=\"Enter Location\">\n                          </div>\n                          <div class=\"new-travel-departing-date\">\n                              <h2>Departing:</h2>\n                              <input placeholder=\"MM/DD/YYYY\" type=\"text\" required\n                                  pattern=\"([1-9]|[1][0-2])/([1-9]|[1-2][0-9]|[3][0-1])/([0-9][0-9][0-9][0-9])\" form=\"base-form\">\n                          </div>\n                          <div class=\"new-trip-buttons\">\n                              <div class=\"save-trip-form-button\">save trip</div>\n                              <div class=\"remove-trip-form-button\">remove trip</div>\n                          </div>";
+      _globals_js__WEBPACK_IMPORTED_MODULE_1__.allTrips.appendChild(newTrip);
+      var saveTripButton = document.getElementsByClassName("save-trip-form-button")[0];
+      saveTripButton.addEventListener("click", function () {
+        if (_index_js__WEBPACK_IMPORTED_MODULE_0__.baseForm.reportValidity()) {
+          console.log("SUCCESS"); //Add as a trip
 
-    //Add the content (inputs, buttons etc.)
-    newTrip.innerHTML = "                    <div class=\"new-trip-destination\">\n                              <h2>My trip to:</h2>\n                              <input form=\"base-form\" required type=\"text\" placeholder=\"Enter Location\">\n                          </div>\n                          <div class=\"new-travel-departing-date\">\n                              <h2>Departing:</h2>\n                              <input placeholder=\"MM/DD/YYYY\" type=\"text\" required\n                                  pattern=\"([1-9]|[1][0-2])/([1-9]|[1-2][0-9]|[3][0-1])/([0-9][0-9][0-9][0-9])\" form=\"base-form\">\n                          </div>\n                          <div class=\"new-trip-buttons\">\n                              <div class=\"save-trip-form-button\">save trip</div>\n                              <div class=\"remove-trip-form-button\">remove trip</div>\n                          </div>";
-    _globals_js__WEBPACK_IMPORTED_MODULE_0__.allTrips.appendChild(newTrip);
-    var saveTripButton = document.getElementsByClassName("save-trip-form-button")[0];
-    saveTripButton.addEventListener("click", function () {
-      if (baseForm.reportValidity()) {
-        console.log("SUCCESS"); //Add as a trip
+          var newLocationString = document.getElementsByClassName("new-trip-destination")[0].lastElementChild.value;
+          var newDateString = document.getElementsByClassName("new-travel-departing-date")[0].lastElementChild.value;
+          console.log(newLocationString);
+          console.log(newDateString);
+          (0,_tripsList_js__WEBPACK_IMPORTED_MODULE_2__.allTripsScript)(newLocationString, newDateString);
+          removeNewTripForm();
+        }
+      });
+      var removeTripButton = document.getElementsByClassName("remove-trip-form-button")[0];
 
-        var newLocationString = document.getElementsByClassName("new-trip-destination")[0].lastElementChild.value;
-        var newDateString = document.getElementsByClassName("new-travel-departing-date")[0].lastElementChild.value;
-        console.log(newLocationString);
-        console.log(newDateString);
-        (0,_tripsList_js__WEBPACK_IMPORTED_MODULE_1__.addNewTrip)(newLocationString, newDateString);
-        removeNewTripForm();
-      }
-    });
-    var removeTripButton = document.getElementsByClassName("remove-trip-form-button")[0];
-
-    //Remove the new trip form
-    removeTripButton.addEventListener("click", removeNewTripForm);
-  } else {
-    alert("There already is a new trip form.");
-  }
-});
-var removeNewTripForm = function removeNewTripForm() {
-  var newTripForm = document.getElementsByClassName("new-travel-trip")[0];
-  newTripFormExists = false;
-  newTripForm.remove();
+      //Remove the new trip form
+      removeTripButton.addEventListener("click", removeNewTripForm);
+    } else {
+      alert("There already is a new trip form.");
+    }
+  });
+  var removeNewTripForm = function removeNewTripForm() {
+    var newTripForm = document.getElementsByClassName("new-travel-trip")[0];
+    newTripFormExists = false;
+    newTripForm.remove();
+  };
 };
 
 /***/ }),
@@ -93,7 +124,8 @@ var removeNewTripForm = function removeNewTripForm() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   addNewTrip: () => (/* binding */ addNewTrip)
+/* harmony export */   allTripsScript: () => (/* binding */ allTripsScript),
+/* harmony export */   dateDifferenceInDays: () => (/* binding */ dateDifferenceInDays)
 /* harmony export */ });
 /* harmony import */ var _globals_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./globals.js */ "./src/client/js/globals.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -108,166 +140,175 @@ var dateDifferenceInDays = function dateDifferenceInDays(newDate) {
   var differneceInDays = Math.floor(difference / (1000 * 60 * 60 * 24));
   return differneceInDays;
 };
-var addNewTrip = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(newLocationString, newDateString) {
-    var section, removeTripButton, destinationText, dateText, weatherData, weatherDataElement, cityImageElement, newDate, differenceInDays, countDownText;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          _globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips += 1;
-          section = document.createElement("section");
-          section.setAttribute("id", "trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips));
-          section.setAttribute("class", "travel-trip");
-          section.innerHTML = "<div class=\"trip-image-container\">\n    <img class=\"trip-image\" id=\"trip-image-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\" src=\"\" alt=\"City Image\">\n</div>\n<div class=\"trip-information\">\n    <div>\n        <div id=\"destination-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n            <h1>My trip to:</h1>\n        </div>\n        <div id=\"date-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n            <h1>Departing: </h1>\n        </div>\n        <div class=\"trip-buttons\">\n            <div class=\"trip-buttons\">\n                <div class=\"save-trip-button\" id=\"save-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">save trip</div>\n                <div class=\"remove-trip-button\" id=\"remove-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">remove trip</div>\n            </div>\n        </div>\n        <div class=\"countdown-trip\" id=\"countdown-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n            <p>countdown</p>\n        </div>\n        <div class=\"weather-trip\" id=\"weather-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n            <p class=\"title-weather-trip\">Typical Weather for then is:</p>\n            <p class=\"high-low-weather-trip\">high and low temps</p>\n            <p class=\"cloudy-weather-trip\">Weather Description</p>\n        </div>\n    </div>\n</div>");
-          _globals_js__WEBPACK_IMPORTED_MODULE_0__.allTrips.appendChild(section);
+var allTripsScript = function allTripsScript(newLocationString, newDateString) {
+  var addNewTrip = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var section, removeTripButton, destinationText, dateText, weatherData, weatherDataElement, cityImageElement, newDate, differenceInDays, countDownText;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips += 1;
+            section = document.createElement("section");
+            section.setAttribute("id", "trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips));
+            section.setAttribute("class", "travel-trip");
+            section.innerHTML = "<div class=\"trip-image-container\">\n      <img class=\"trip-image\" id=\"trip-image-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\" src=\"\" alt=\"City Image\">\n  </div>\n  <div class=\"trip-information\">\n      <div>\n          <div id=\"destination-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n              <h1>My trip to:</h1>\n          </div>\n          <div id=\"date-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n              <h1>Departing: </h1>\n          </div>\n          <div class=\"trip-buttons\">\n              <div class=\"trip-buttons\">\n                  <div class=\"save-trip-button\" id=\"save-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">save trip</div>\n                  <div class=\"remove-trip-button\" id=\"remove-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">remove trip</div>\n              </div>\n          </div>\n          <div class=\"countdown-trip\" id=\"countdown-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n              <p>countdown</p>\n          </div>\n          <div class=\"weather-trip\" id=\"weather-trip-").concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips, "\">\n              <p class=\"title-weather-trip\">Typical Weather for then is:</p>\n              <p class=\"high-low-weather-trip\">high and low temps</p>\n              <p class=\"cloudy-weather-trip\">Weather Description</p>\n          </div>\n      </div>\n  </div>");
+            _globals_js__WEBPACK_IMPORTED_MODULE_0__.allTrips.appendChild(section);
 
-          //Adding event listener to remove button
-          removeTripButton = document.getElementById("remove-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips));
-          removeTripButton.addEventListener("click", function () {
-            var tripId = removeTripButton.getAttribute("id").split("-")[2];
-            var trip = document.getElementById("trip-".concat(tripId));
-            trip.remove();
-            _globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips -= 1;
-          });
+            //Adding event listener to remove button
+            removeTripButton = document.getElementById("remove-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips));
+            removeTripButton.addEventListener("click", function () {
+              var tripId = removeTripButton.getAttribute("id").split("-")[2];
+              var trip = document.getElementById("trip-".concat(tripId));
+              trip.remove();
+              _globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips -= 1;
+            });
 
-          //Add trip destination
-          destinationText = document.getElementById("destination-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)).lastElementChild;
-          destinationText.textContent = "My trip to: ".concat(newLocationString);
+            //Add trip destination
+            destinationText = document.getElementById("destination-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)).lastElementChild;
+            destinationText.textContent = "My trip to: ".concat(newLocationString);
 
-          //Add trip date
-          dateText = document.getElementById("date-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)).lastElementChild;
-          dateText.textContent = "Departing: ".concat(newDateString);
+            //Add trip date
+            dateText = document.getElementById("date-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)).lastElementChild;
+            dateText.textContent = "Departing: ".concat(newDateString);
 
-          //Add weather data
+            //Add weather data
 
-          //Call weather APi and get the weather information.
-          _context.next = 14;
-          return getCityWeather(newLocationString);
-        case 14:
-          weatherData = _context.sent;
-          weatherDataElement = document.getElementById("weather-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)); //set high and low stuff
-          weatherDataElement.children[1].textContent = "High: ".concat(weatherData.high_temp, ", Low: ").concat(weatherData.low_temp);
-          weatherDataElement.children[2].textContent = "".concat(weatherData.weather_description);
+            //Call weather APi and get the weather information.
+            _context.next = 14;
+            return getCityWeather(newLocationString);
+          case 14:
+            weatherData = _context.sent;
+            weatherDataElement = document.getElementById("weather-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)); //set high and low stuff
+            weatherDataElement.children[1].textContent = "High: ".concat(weatherData.high_temp, ", Low: ").concat(weatherData.low_temp);
+            weatherDataElement.children[2].textContent = "".concat(weatherData.weather_description);
 
-          //Add Image
-          cityImageElement = document.getElementById("trip-image-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips));
-          _context.next = 21;
-          return getCityImage(newLocationString).then(function (imageURL) {
-            cityImageElement.setAttribute("src", imageURL);
-            console.log("Image URL: ".concat(imageURL));
-          });
-        case 21:
-          //Add countdown
-          newDate = new Date(newDateString);
-          differenceInDays = dateDifferenceInDays(newDate);
-          countDownText = document.getElementById("countdown-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)).lastElementChild;
-          countDownText.textContent = "".concat(newLocationString, " is ").concat(differenceInDays, " days away");
-        case 25:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee);
-  }));
-  return function addNewTrip(_x, _x2) {
-    return _ref.apply(this, arguments);
-  };
-}();
-var getCityImage = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(cityName) {
-    var response, response2, data, _data;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return fetch("".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.serverURL, "/getImage?cityName=").concat(cityName.toLowerCase()));
-        case 2:
-          response = _context2.sent;
-          response2 = response.clone();
-          _context2.prev = 4;
-          _context2.next = 7;
-          return response.text();
-        case 7:
-          data = _context2.sent;
-          return _context2.abrupt("return", data);
-        case 11:
-          _context2.prev = 11;
-          _context2.t0 = _context2["catch"](4);
-          _context2.prev = 13;
-          _context2.next = 16;
-          return response2.text();
-        case 16:
-          _data = _context2.sent;
-          if (_data === "error") {
-            console.log("Getting City Image Error: ".concat(_context2.t0));
-            alert("Getting City Image Error: ".concat(_context2.t0));
-          } else {
-            alert("No weather Data About that city");
-          }
-          _context2.next = 24;
-          break;
-        case 20:
-          _context2.prev = 20;
-          _context2.t1 = _context2["catch"](13);
-          console.log("Getting City Image Error: ".concat(_context2.t1));
-          alert("Getting City Image Error: ".concat(_context2.t1));
-        case 24:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2, null, [[4, 11], [13, 20]]);
-  }));
-  return function getCityImage(_x3) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-var getCityWeather = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(cityName) {
-    var response, response2, data, _data2;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          _context3.next = 2;
-          return fetch("".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.serverURL, "/getWeather?cityName=").concat(cityName.toLowerCase()));
-        case 2:
-          response = _context3.sent;
-          response2 = response.clone();
-          _context3.prev = 4;
-          _context3.next = 7;
-          return response.json();
-        case 7:
-          data = _context3.sent;
-          return _context3.abrupt("return", data);
-        case 11:
-          _context3.prev = 11;
-          _context3.t0 = _context3["catch"](4);
-          _context3.prev = 13;
-          _context3.next = 16;
-          return response2.text();
-        case 16:
-          _data2 = _context3.sent;
-          if (_data2 === "error") {
-            console.log("Getting City Weather Error: ".concat(_context3.t0));
-            alert("Getting City Weather Error: ".concat(_context3.t0));
-          } else {
-            alert("No weather Data About that city");
-          }
-          _context3.next = 24;
-          break;
-        case 20:
-          _context3.prev = 20;
-          _context3.t1 = _context3["catch"](13);
-          console.log("Getting City Weather Error: ".concat(_context3.t1));
-          alert("Getting City Weather Error: ".concat(_context3.t1));
-        case 24:
-        case "end":
-          return _context3.stop();
-      }
-    }, _callee3, null, [[4, 11], [13, 20]]);
-  }));
-  return function getCityWeather(_x4) {
-    return _ref3.apply(this, arguments);
-  };
-}();
+            //Add Image
+            cityImageElement = document.getElementById("trip-image-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips));
+            _context.next = 21;
+            return getCityImage(newLocationString).then(function (imageURL) {
+              cityImageElement.setAttribute("src", imageURL);
+              console.log("Image URL: ".concat(imageURL));
+            });
+          case 21:
+            //Add countdown
+            newDate = new Date(newDateString);
+            differenceInDays = dateDifferenceInDays(newDate);
+            countDownText = document.getElementById("countdown-trip-".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.numberOfTrips)).lastElementChild;
+            countDownText.textContent = "".concat(newLocationString, " is ").concat(differenceInDays, " days away");
+          case 25:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function addNewTrip() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  var getCityImage = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(cityName) {
+      var response, response2, data, _data;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return fetch("".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.serverURL, "/getImage?cityName=").concat(cityName.toLowerCase()))["catch"](function (error) {
+              console.log("Error with Getting City Weather: ".concat(error));
+              alert("Error with Getting City Weather: ".concat(error));
+            });
+          case 2:
+            response = _context2.sent;
+            response2 = response.clone();
+            _context2.prev = 4;
+            _context2.next = 7;
+            return response.text();
+          case 7:
+            data = _context2.sent;
+            return _context2.abrupt("return", data);
+          case 11:
+            _context2.prev = 11;
+            _context2.t0 = _context2["catch"](4);
+            _context2.prev = 13;
+            _context2.next = 16;
+            return response2.text();
+          case 16:
+            _data = _context2.sent;
+            if (_data === "error") {
+              console.log("Getting City Image Error: ".concat(_context2.t0));
+              alert("Getting City Image Error: ".concat(_context2.t0));
+            } else {
+              alert("No weather Data About that city");
+            }
+            _context2.next = 24;
+            break;
+          case 20:
+            _context2.prev = 20;
+            _context2.t1 = _context2["catch"](13);
+            console.log("Getting City Image Error: ".concat(_context2.t1));
+            alert("Getting City Image Error: ".concat(_context2.t1));
+          case 24:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2, null, [[4, 11], [13, 20]]);
+    }));
+    return function getCityImage(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var getCityWeather = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(cityName) {
+      var response, response2, data, _data2;
+      return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+        while (1) switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return fetch("".concat(_globals_js__WEBPACK_IMPORTED_MODULE_0__.globals.serverURL, "/getWeather?cityName=").concat(cityName.toLowerCase()))["catch"](function (error) {
+              console.log("Error with Getting City Weather: ".concat(error));
+              alert("Error with Getting City Weather: ".concat(error));
+            });
+          case 2:
+            response = _context3.sent;
+            response2 = response.clone();
+            _context3.prev = 4;
+            _context3.next = 7;
+            return response.json();
+          case 7:
+            data = _context3.sent;
+            return _context3.abrupt("return", data);
+          case 11:
+            _context3.prev = 11;
+            _context3.t0 = _context3["catch"](4);
+            _context3.prev = 13;
+            _context3.next = 16;
+            return response2.text();
+          case 16:
+            _data2 = _context3.sent;
+            if (_data2 === "error") {
+              console.log("Getting City Weather Error: ".concat(_context3.t0));
+              alert("Getting City Weather Error: ".concat(_context3.t0));
+            } else {
+              alert("No weather Data About that city");
+            }
+            _context3.next = 24;
+            break;
+          case 20:
+            _context3.prev = 20;
+            _context3.t1 = _context3["catch"](13);
+            console.log("Getting City Weather Error: ".concat(_context3.t1));
+            alert("Getting City Weather Error: ".concat(_context3.t1));
+          case 24:
+          case "end":
+            return _context3.stop();
+        }
+      }, _callee3, null, [[4, 11], [13, 20]]);
+    }));
+    return function getCityWeather(_x2) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  addNewTrip();
+};
 
 /***/ }),
 
@@ -351,24 +392,13 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
-(() => {
-/*!*****************************!*\
-  !*** ./src/client/index.js ***!
-  \*****************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_newTripFormStyle_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/newTripFormStyle.scss */ "./src/client/styles/newTripFormStyle.scss");
-/* harmony import */ var _styles_tripStyle_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/tripStyle.scss */ "./src/client/styles/tripStyle.scss");
-/* harmony import */ var _js_newTripForm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/newTripForm.js */ "./src/client/js/newTripForm.js");
-/* harmony import */ var _js_tripsList_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/tripsList.js */ "./src/client/js/tripsList.js");
-
-
-
-
-})();
-
-Client = __webpack_exports__;
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/client/index.js");
+/******/ 	Client = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map

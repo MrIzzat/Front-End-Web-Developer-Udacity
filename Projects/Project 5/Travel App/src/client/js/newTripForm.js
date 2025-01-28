@@ -1,18 +1,17 @@
+import { baseForm } from "../index.js";
 import { allTrips, globals } from "./globals.js";
-import { addNewTrip } from "./tripsList.js";
+import { allTripsScript } from "./tripsList.js";
 
 let newTripFormExists = false;
 
 
-
-// Getting the base form, used for validating inputs
-const baseForm = document.getElementById("base-form");
-
-baseForm.addEventListener("submit", (event) => {
+export const turnOffDefault = (event) => {
   event.preventDefault();
-});
+}
 
-//Get the button that adds new trips
+
+export const addNewTrip = () => {
+  //Get the button that adds new trips
 const newTripButton = document.getElementById("add-trip-button");
 
 newTripButton.addEventListener("click", () => {
@@ -54,7 +53,7 @@ newTripButton.addEventListener("click", () => {
         console.log(newLocationString)
         console.log(newDateString)
         
-        addNewTrip(newLocationString, newDateString);
+        allTripsScript(newLocationString, newDateString);
 
         removeNewTripForm();
       }
@@ -75,3 +74,4 @@ const removeNewTripForm = () => {
   newTripFormExists = false;
   newTripForm.remove();
 };
+}

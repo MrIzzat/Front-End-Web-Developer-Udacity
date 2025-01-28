@@ -92,59 +92,109 @@
 /*!***************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/styles/tripStyle.scss ***!
   \***************************************************************************************************************************/
-.travel-trip {
-  background: rgba(255, 0, 0, 0.1);
-  height: 400px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-areas: "image info"; }
-  .travel-trip .trip-image-container {
-    grid-area: image;
-    border: 1px solid black;
+@media (min-width: 1100px) {
+  .travel-trip {
+    background: rgba(255, 0, 0, 0.1);
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "image info"; }
+    .travel-trip .trip-image-container {
+      grid-area: image;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .travel-trip .trip-image-container .trip-image {
+        object-fit: contain;
+        height: 380px; }
+    .travel-trip .trip-information {
+      grid-area: info;
+      border: 1px solid black;
+      width: 100%;
+      justify-items: center; }
+      .travel-trip .trip-information .countdown-trip {
+        font-size: 24px; }
+      .travel-trip .trip-information .title-weather-trip {
+        font-size: 24px; }
+      .travel-trip .trip-information .high-low-weather-trip {
+        font-size: 18px; }
+      .travel-trip .trip-information .cloudy-weather-trip {
+        font-size: 18px; }
+  .trip-buttons {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center; }
-    .travel-trip .trip-image-container .trip-image {
-      object-fit: contain;
-      height: 380px; }
-  .travel-trip .trip-information {
-    grid-area: info;
-    border: 1px solid black;
-    width: 100%;
-    justify-items: center; }
-    .travel-trip .trip-information .countdown-trip {
-      font-size: 24px; }
-    .travel-trip .trip-information .title-weather-trip {
-      font-size: 24px; }
-    .travel-trip .trip-information .high-low-weather-trip {
-      font-size: 18px; }
-    .travel-trip .trip-information .cloudy-weather-trip {
-      font-size: 18px; }
+    justify-content: space-between;
+    width: 210px;
+    cursor: pointer;
+    user-select: none; }
+    .trip-buttons .save-trip-button {
+      background: white;
+      border: 3px solid black;
+      font-size: 20px;
+      padding: 5px;
+      font-size: 20px;
+      padding: 5px; }
+      .trip-buttons .save-trip-button:hover {
+        border: 3px solid rgba(255, 0, 0, 0.9); }
+    .trip-buttons .remove-trip-button {
+      background: white;
+      border: 3px solid black;
+      font-size: 20px;
+      padding: 5px; }
+      .trip-buttons .remove-trip-button:hover {
+        border: 3px solid rgba(255, 0, 0, 0.9); } }
 
-.trip-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 210px;
-  cursor: pointer;
-  user-select: none; }
-  .trip-buttons .save-trip-button {
-    background: white;
-    border: 3px solid black;
-    font-size: 20px;
-    padding: 5px;
-    font-size: 20px;
-    padding: 5px; }
-    .trip-buttons .save-trip-button:hover {
-      border: 3px solid rgba(255, 0, 0, 0.9); }
-  .trip-buttons .remove-trip-button {
-    background: white;
-    border: 3px solid black;
-    font-size: 20px;
-    padding: 5px; }
-    .trip-buttons .remove-trip-button:hover {
-      border: 3px solid rgba(255, 0, 0, 0.9); }
+@media (max-width: 1099px) {
+  .travel-trip {
+    background: rgba(255, 0, 0, 0.1);
+    height: 800px; }
+    .travel-trip .trip-image-container {
+      border: 1px solid black;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      overflow: auto; }
+      .travel-trip .trip-image-container .trip-image {
+        object-fit: fill;
+        height: 380px; }
+    .travel-trip .trip-information {
+      border: 1px solid black;
+      width: 100%;
+      justify-items: center; }
+      .travel-trip .trip-information .countdown-trip {
+        font-size: 24px; }
+      .travel-trip .trip-information .title-weather-trip {
+        font-size: 24px; }
+      .travel-trip .trip-information .high-low-weather-trip {
+        font-size: 18px; }
+      .travel-trip .trip-information .cloudy-weather-trip {
+        font-size: 18px; }
+  .trip-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 210px;
+    cursor: pointer;
+    user-select: none; }
+    .trip-buttons .save-trip-button {
+      background: white;
+      border: 3px solid black;
+      font-size: 20px;
+      padding: 5px;
+      font-size: 20px;
+      padding: 5px; }
+      .trip-buttons .save-trip-button:hover {
+        border: 3px solid rgba(255, 0, 0, 0.9); }
+    .trip-buttons .remove-trip-button {
+      background: white;
+      border: 3px solid black;
+      font-size: 20px;
+      padding: 5px; }
+      .trip-buttons .remove-trip-button:hover {
+        border: 3px solid rgba(255, 0, 0, 0.9); } }
 
 
 /*# sourceMappingURL=main.css.map*/

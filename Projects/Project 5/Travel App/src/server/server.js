@@ -88,6 +88,12 @@ const getGeoName = async (url = "") => {
 //City Weather helper function
 
 const getCityWeather = async (url = "") => {
+  try {
+    url = new URL(url);
+  } catch (_) {
+    return "error";
+  }
+
   const response = await fetch(url)
     .then(async (response) => {
       const data = await response.json();
@@ -126,3 +132,5 @@ const getCityImage = async (url = "") => {
 };
 
 // getCityImage(`${pixabayBaseUrl}paris`)
+
+module.exports = { getCityWeather };
