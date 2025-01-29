@@ -1,5 +1,7 @@
 This is a trip list project. Users can enter a a trip's destination and depart date and the webpage will show an image in the destination as well as weather information in that region during that time.
 
+This project was made in node 18.16.1
+
 To run the server, do:
 
 ```bash
